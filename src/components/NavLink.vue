@@ -8,7 +8,7 @@
     <a :href="url">{{ text }}</a>
 </template>
 
-<style>
+<style lang="scss">
     a {
         text-decoration: none;
     }

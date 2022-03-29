@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+     <CustomBanner>
+         <template v-slot:title>
+             <h3>Donner un titre a la carte</h3>
+         </template>
+         <template v-slot:text>
+             <h3>Donner un text a la carte</h3>
+         </template>
+         <template v-slot:action>
+             <button>Action de la carte</button>
+         </template>
+     </CustomBanner>
   </div>
 </template>
+
+<script>
+    import CustomBanner from './components/CustomBanner'
+    export default {
+        components: {
+            CustomBanner
+        },
+    }
+</script>
 
 <style lang="scss">
 #app {
