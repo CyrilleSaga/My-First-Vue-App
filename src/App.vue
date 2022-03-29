@@ -1,25 +1,20 @@
 <template>
   <div id="app">
-     <CustomBanner>
-         <template v-slot:title>
-             <h3>Donner un titre a la carte</h3>
-         </template>
-         <template v-slot:text>
-             <h3>Donner un text a la carte</h3>
-         </template>
-         <template v-slot:action>
-             <button>Action de la carte</button>
-         </template>
-     </CustomBanner>
+     <p>La date d'aujourd'hui</p>
+     <span>{{ formatedDate }}</span> <br>
+     <button @click="incrementMonth">Incrémenter</button>
   </div>
 </template>
 
 <script>
-    import CustomBanner from './components/CustomBanner'
+    import {mapGetters, mapActions} from 'vuex'
     export default {
-        components: {
-            CustomBanner
+        computed: {
+            ...mapGetters(['formatedDate'])
         },
+        methods: {
+            ...mapActions(['incrementMonth'])
+        }
     }
 </script>
 
